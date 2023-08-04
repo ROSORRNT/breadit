@@ -2,7 +2,7 @@ import '@/styles/globals.css'
 
 export const metadata = {
   title: 'Breadit',
-  description: 'A Reddit clone built with Next.js and TypeScript.',
+  description: 'Un clone Reddit construit avec Next.js et TypeScript.',
 }
 
 export default function RootLayout({

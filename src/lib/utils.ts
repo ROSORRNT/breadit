@@ -1,29 +1,29 @@
 import { ClassValue, clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 import { formatDistanceToNowStrict } from 'date-fns'
-import locale from 'date-fns/locale/en-US'
+import locale from 'date-fns/locale/fr'
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
 const formatDistanceLocale = {
-  lessThanXSeconds: 'just now',
-  xSeconds: 'just now',
-  halfAMinute: 'just now',
-  lessThanXMinutes: '{{count}}m',
-  xMinutes: '{{count}}m',
-  aboutXHours: '{{count}}h',
-  xHours: '{{count}}h',
-  xDays: '{{count}}d',
-  aboutXWeeks: '{{count}}w',
-  xWeeks: '{{count}}w',
-  aboutXMonths: '{{count}}m',
-  xMonths: '{{count}}m',
-  aboutXYears: '{{count}}y',
-  xYears: '{{count}}y',
-  overXYears: '{{count}}y',
-  almostXYears: '{{count}}y',
+  lessThanXSeconds: 'à l\'instant',
+  xSeconds: 'à l\'instant',
+  halfAMinute: 'à l\'instant',
+  lessThanXMinutes: 'il y a {{count}}m',
+  xMinutes: 'il y a {{count}}m',
+  aboutXHours: 'il y a environ {{count}}h',
+  xHours: 'il y a {{count}}h',
+  xDays: 'il y a {{count}}j',
+  aboutXWeeks: 'il y a environ {{count}}s',
+  xWeeks: 'il y a {{count}}s',
+  aboutXMonths: 'il y a environ {{count}}m',
+  xMonths: 'il y a {{count}}m',
+  aboutXYears: 'il y a environ {{count}}a',
+  xYears: 'il y a {{count}}a',
+  overXYears: 'il y a plus de {{count}}a',
+  almostXYears: 'presque {{count}}a',
 }
 
 function formatDistance(token: string, count: number, options?: any): string {
@@ -35,10 +35,10 @@ function formatDistance(token: string, count: number, options?: any): string {
 
   if (options.addSuffix) {
     if (options.comparison > 0) {
-      return 'in ' + result
+      return 'dans ' + result
     } else {
-      if (result === 'just now') return result
-      return result + ' ago'
+      if (result === 'à l\'instant') return result
+      return result
     }
   }
 
